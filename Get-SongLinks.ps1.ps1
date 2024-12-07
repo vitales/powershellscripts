@@ -5,7 +5,7 @@
 
 .DESCRIPTION
     The script processes each Spotify track link by querying the Song.link API to fetch the song details and platform-specific URLs. The output includes:
-	Target Platform (e.g., Apple Music, Tidal, youtubeMusic)
+	Target Platform (e.g., Apple Music, Tidal,)
 	Artist Name
 	Track Title
 	Link to the specified platform
@@ -23,7 +23,7 @@
 
 .NOTES
     Version : 07.12.2024
-    Author : Vitales
+    Responsible person : Vitales
 #>
 
 
@@ -58,9 +58,7 @@ function Get-SongLinks {
 
             # Result of request
             $Result = [PSCustomObject]@{
-                "Platform"      = $TargetPlatform
-                "Artist"        = $Entity.artistName
-                "Track"         = $Entity.title
+                "Artist"        = $Entity.artistName + " - " + $Entity.title
                 "Platform Link" = $SongData.url
             }
 
