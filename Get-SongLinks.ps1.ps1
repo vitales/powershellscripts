@@ -58,8 +58,8 @@ function Get-SongLinks {
 
             # Result of request
             $Result = [PSCustomObject]@{
-                "Artist"        = $Entity.artistName + " - " + $Entity.title
-                "Platform Link" = $SongData.url
+                "Song Name"         = $Entity.artistName + " - " + $Entity.title
+                "Platform Link"     = $SongData.url
             }
 
             return $Result
